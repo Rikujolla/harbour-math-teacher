@@ -135,9 +135,9 @@ function fill_answers(a,b,c,_level) {
 
     for (i=0;i<9;i++){ //TBD to be used while loop later to get more valid answers
         var _visible = Math.random();
-        if (_visible < 0.6 && sum_visible < num_visible) {
+        if (_visible < 0.6+i*0.05 && sum_visible < num_visible) {
             var __visible = true;
-            sum_visible++;
+            //sum_visible++;
         }
         else {__visible = false};
         if (i === right_position) {
@@ -152,6 +152,7 @@ function fill_answers(a,b,c,_level) {
             else if (__visible) {
                 valuearray.push(z);
                 answers.set(i,{"box_color":"blue", "answer":z, "click": true, "box_visible":__visible})
+                sum_visible++;
             }
             else {
                 answers.set(i,{"box_color":"blue", "answer":z, "click": true, "box_visible":false})

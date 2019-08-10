@@ -2,13 +2,11 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Item {
-    id: promotionBox
+    id: flowerBox
     anchors.fill: parent
 
-    //property alias pro_piece: dialogWindow.proPiece
+    property alias flower_result: rec_repeat.result
     //property alias pro_color: dialogWindow.proColor
-    //property alias pro_index: dialogWindow.proIndex
-    //property alias turn_White: dialogWindow.turnWhite
 
     Rectangle {
         anchors.fill: parent
@@ -19,74 +17,60 @@ Item {
         // the dialog window will not do anything
         MouseArea {
             anchors.fill: parent
+            onClicked: {
+                flowerBox.destroy()
+            }
         }
     }
 
-    // This rectangle is the actual popup
-    Rectangle {
-        id: dialogWindow
-        //property string proPiece
-        //property string proColor
-        //property int proIndex
-        //property bool turnWhite
-        width: 5*Screen.width/8
-        height: Screen.width/8
-        color: "#dddea1" // Grid colors dddea1 and 997400 Kapu's colors fada5e and 664228
-        //    radius: 10
-        anchors.centerIn: parent
-        GridView {
-            id: promogrid
-            cellWidth: Screen.width/8
-            cellHeight: Screen.width/8
-            anchors.fill: parent
-            //layoutDirection: isMyStart && turn_White || !isMyStart && !turn_White ? Qt.LeftToRight : Qt.RightToLeft
-            model:5
-            delegate: Rectangle {
-                id: pieceImage
-                height: promogrid.cellHeight
-                width: height
-                radius: height/2
-                color: "red"
 
-                // Delete popup
-                MouseArea{
-                    anchors.fill: parent
-                    onClicked: {
-                        promotionBox.destroy()
-                    }
-                } //end MouseArea
-            } //end Image
-        } // end GridView
-    } // end Rectangle
+    Repeater {
+        id: rec_repeat
+        property int result
+        model: flower_result+1
+        Rectangle {
+            x: Math.floor(Math.random() * Screen.width)
+            y: 200 + Math.floor(Math.random() * Screen.height)
+            width: 100
+            height: 100
+            border.width: 1
+            color: Qt.rgba(Math.random(),Math.random(),Math.random(),1)
+            radius:width/2
+            Repeater {
+                id:rec_leaves
+                //property string rec_colori: Qt.rgba(Math.random(),Math.random(),Math.random(),1)
+                model: Math.floor(Math.random() *8) +1
+                Rectangle {
+                    x: 30+70*Math.cos(2*Math.PI*index/rec_leaves.count)
+                    y: 30+70*Math.sin(2*Math.PI*index/rec_leaves.count)
+                    width: 40
+                    height: 40
+                    radius: width/2
+                    //rotation: index*360.0/rec_leaves.count
+                    color: Qt.rgba(Math.random(),Math.random(),Math.random(),1)
+                }
+
+            }
+        }
+    }
+    // This rectangle is the actual popup
 
     ListModel {
-        id: promotionModel
+        id: recmodel
         ListElement {
-            white: "Q.png"
-            black: "q.png"
-            stfish: "q"
+            recx: 100
+            recy: 800
+            reccol: "yellow"
         }
         ListElement {
-            white: "R.png"
-            black: "r.png"
-            stfish: "r"
+            recx: 200
+            recy: 900
+            reccol: "blue"
         }
         ListElement {
-            white: "N.png"
-            black: "n.png"
-            stfish: "n"
-        }
-        ListElement {
-            white: "B.png"
-            black: "b.png"
-            stfish: "b"
-        }
-        ListElement {
-            white: "P.png"
-            black: "p.png"
-            stfish: "p"
+            recx: 300
+            recy: 1000
+            reccol: "red"
         }
     }
-
-
 }

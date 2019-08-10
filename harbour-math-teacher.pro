@@ -23,12 +23,12 @@ DISTFILES += qml/harbour-math-teacher.qml \
     qml/pages/QuizPage.qml \
     qml/pages/functions.js \
     qml/pages/About.qml \
-    qml/pages/MistakesPage.qml \
     qml/pages/FunPage.qml \
     qml/pages/FlowersPage.qml \
     qml/pages/LevelChange.qml \
     rpm/harbour-math-teacher.changes \
-    rpm/harbour-math-teacher.changes.run
+    rpm/harbour-math-teacher.changes.run \
+    qml/pages/LearningPage.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 

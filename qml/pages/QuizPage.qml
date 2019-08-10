@@ -5,11 +5,14 @@ import "./functions.js" as MyFunc
 Page {
     id: page
 
-    property int coins: 0 // To earn coins to buy food, services and equipment
+    //property int coins: 0 // To earn coins to buy food, services and equipment
     property int level_points : 0 // Normally increase when you get a point when answering right
-    property int mistake_points: 30 // To be reduced when mistakes or time overflows
     property int level: 0 //
-    property int questions_count: 5 //
+    //property int questions_count: 5 //
+    property int a:1
+    property int b:2
+    property int c:-1
+    property bool quiz_started : false
 
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
@@ -28,10 +31,10 @@ Page {
                 text: qsTr("Start")
                 onClicked: {
                     //column.a = MyFunc.multiplier_lottery(level)
-                    column.a = Math.floor(Math.random() * 11);
-                    column.b = MyFunc.multiplier_lottery(level)
-                    MyFunc.fill_answers(column.a, column.b, column.c, level)
-                    column.quiz_started = true
+                    a = Math.floor(Math.random() * 11);
+                    b = MyFunc.multiplier_lottery(level)
+                    MyFunc.fill_answers(a, b, c, level)
+                    quiz_started = true
                 }
             }
         }
@@ -50,20 +53,12 @@ Page {
             width: page.width
             spacing: Theme.paddingLarge
 
-            property int a:1
-            property int b:2
-            property int c:-1
-            property bool quiz_started : false
-
-
-
-
             PageHeader {
                 title: qsTr("Math Page")
             }
             Label {
                 x: Theme.horizontalPageMargin
-                text: column.a + " x " + column.b + " = ?"
+                text: a + " x " + b + " = ?"
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeExtraLarge
             }
@@ -100,8 +95,8 @@ Page {
                             width: grid.cellWidth
                             enabled: click
                             onClicked: {
-                                column.quiz_started = true
-                                if (answers.get(index).answer === column.a * column.b){
+                                quiz_started = true
+                                if (answers.get(index).answer === a * b){
                                     answers.set(index,{"box_color":"green"})
                                     //m_area.enabled = false;
                                     MyFunc.not_enable();
@@ -115,7 +110,6 @@ Page {
                                     questions_count = questions_count - 1;
                                     if (questions_count < 1) {
                                         questions_count = Math.max(5, level *5);
-                                        mistake_points = 30;
                                         pageStack.push(Qt.resolvedUrl("FunPage.qml"))
                                     }
                                     else if (MyFunc.level_check(level, level_points) > level) {
@@ -125,12 +119,11 @@ Page {
                                 }
                                 else {
                                     answers.set(index,{"box_color":"red"})
-                                    mistake_points = mistake_points - 5;
-                                    if (mistake_points <1 || questions_count < 1) {
+                                    mistakesModel.set(mistakesModel.count,{"first": a, "second":b})
+                                    if (mistakesModel.count > 5 || questions_count < 1) {
                                         //MyFunc.not_enable();
                                         questions_count = 5;
-                                        mistake_points = 30;
-                                        pageStack.push(Qt.resolvedUrl("MistakesPage.qml"))
+                                        pageStack.push(Qt.resolvedUrl("LearningPage.qml"))
                                     }
                                 }
                             }
@@ -146,7 +139,7 @@ Page {
                 value: 0
                 Timer {
                     id:timer_slider
-                    running: column.quiz_started && mistake_points > 0
+                    running: quiz_started && mistakesModel.count < 6
                     repeat: true
                     interval: 100
                     onTriggered: time_slider.value = time_slider.value + interval/1000
@@ -162,7 +155,7 @@ Page {
                     //anchors.horizontalCenter: parent.horizontalCenter
                     color: "light grey"
                     border.color: "red"
-                    border.width: (mistake_points)*width*0.05
+                    border.width: (6 - mistakesModel.count)*width/4.0
                     radius: width*0.5
                 }
                 Rectangle {
@@ -171,7 +164,7 @@ Page {
                     //anchors.horizontalCenter: parent.horizontalCenter
                     color: "light grey"
                     border.color: "red"
-                    border.width: (mistake_points - 10)*width*0.05
+                    border.width: (4 - mistakesModel.count)*width/4.0
                     radius: width*0.5
                 }
                 Rectangle {
@@ -180,7 +173,7 @@ Page {
                     //anchors.horizontalCenter: parent.horizontalCenter
                     color: "light grey"
                     border.color: "red"
-                    border.width: (mistake_points - 20)*width*0.05
+                    border.width: (2 - mistakesModel.count)*width/4.0
                     radius: width*0.5
                 }
                 Label {
@@ -198,15 +191,6 @@ Page {
                 }
             }
 
-            Label {
-                x: Theme.horizontalPageMargin
-                text: "Game over" + "!"
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeExtraLarge
-                visible: mistake_points < 1
-            }
-
-
             Timer {
                 id: timer
                 running: false
@@ -222,9 +206,9 @@ Page {
                 interval: 500
                 onTriggered: {
                     //column.a = MyFunc.multiplier_lottery(level)
-                    column.a = Math.floor(Math.random() * 11);
-                    column.b = MyFunc.multiplier_lottery(level)
-                    MyFunc.fill_answers(column.a, column.b, column.c, level)
+                    a = Math.floor(Math.random() * 11);
+                    b = MyFunc.multiplier_lottery(level)
+                    MyFunc.fill_answers(a, b, c, level)
                     //m_area.enabled = true;
                 }
             }
@@ -253,4 +237,5 @@ Page {
             }
         }
     }
+    Component.onCompleted: {mistakesModel.clear()}
 }

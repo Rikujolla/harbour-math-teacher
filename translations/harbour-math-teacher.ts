@@ -85,11 +85,15 @@
         <source>Fun page</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Change horse</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
-    <name>MistakesPage</name>
+    <name>LearningPage</name>
     <message>
-        <source>Mistages Page</source>
+        <source>Learning Page</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

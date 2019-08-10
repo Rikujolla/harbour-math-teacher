@@ -3,16 +3,17 @@ import Sailfish.Silica 1.0
 
 Page {
     id: page
-
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
+    property int re_sult
+
 
     SilicaListView {
         id: listView
         model: mistakesModel
         anchors.fill: parent
         header: PageHeader {
-            title: qsTr("Mistages Page")
+            title: qsTr("Learning Page")
         }
         delegate: BackgroundItem {
             id: delegate
@@ -24,10 +25,13 @@ Page {
                 color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
             }
             onClicked: {
-                console.log("Clicked " + index)
+                //console.log("Clicked " + index)
                 if (mistakesModel.count >1) {
+                    re_sult = mistakesModel.get(index).first * mistakesModel.get(index).second
+                    console.log("first ", re_sult)
                     mistakesModel.remove(index)
-                    pageStack.push(Qt.resolvedUrl("FlowersPage.qml"))
+                    coins++;
+                    pageStack.push(Qt.resolvedUrl("FlowersPage.qml"), {flower_result: re_sult})
                 }
                 else {
                     mistakesModel.remove(index)
@@ -36,29 +40,6 @@ Page {
             }
         }
         VerticalScrollDecorator {}
-        ListModel {
-            id: mistakesModel
-            ListElement {
-                first: 1
-                second: 2
-            }
-            ListElement {
-                first: 2
-                second: 3
-            }
-            ListElement {
-                first: 3
-                second: 4
-            }
-            ListElement {
-                first: 4
-                second: 5
-            }
-            ListElement {
-                first: 5
-                second: 6
-            }
-        }
 
     }
 }
