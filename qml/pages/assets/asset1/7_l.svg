@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="101.73876"
+   width="121.10311"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="7_l.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata9">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs7" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1853"
+     inkscape:window-height="1025"
+     id="namedview5"
+     showgrid="false"
+     inkscape:zoom="0.472"
+     inkscape:cx="-196.46657"
+     inkscape:cy="28.592867"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <path
+     d="M 85.30806,33.009613 77.74311,53.637193 71.66467,71.709503 C 63.03692,90.348483 62.18707,88.854603 56.35694,94.415923 53.15927,97.199533 52.62747,97.021053 42.32079,100.98949 17.45623,102.43823 34.50829,101.28569 28.08427,101.5819 16.91886,100.98246 22.34112,102.7527 11.47192,98.894973 11.64137,100.11572 8.16535,96.338973 5.90981,92.653843 3.65427,88.968713 3.42725,89.049853 1.18484,82.624573 L 0,68.702753 V 42.784503 L 4.44313,20.346713 C 6.94918,17.604933 11.75919,-0.63622728 11.96128,12.121373 6.53382,1.1958327 19.53805,13.309913 23.32643,13.904183 L 42.32079,15.089013 53.3052,13.799103 62.5,12.719343 80.49467,10.942093 108.37529,0.87101272 C 114.27005,-3.1444973 126.96274,8.3157727 116.25132,3.2406727 122.94178,2.5807427 122.30145,8.8326927 116.84374,11.942883 L 98.63744,23.382853"
+     id="07_saddle"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccccscccccccccccccc"
+     style="display:inline"
+     inkscape:label="#Saddle"
+     sodipodi:insensitive="true" />
+</svg>

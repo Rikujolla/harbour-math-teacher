@@ -28,7 +28,10 @@ DISTFILES += qml/harbour-math-teacher.qml \
     qml/pages/LevelChange.qml \
     rpm/harbour-math-teacher.changes \
     rpm/harbour-math-teacher.changes.run \
-    qml/pages/LearningPage.qml
+    qml/pages/LearningPage.qml \
+    qml/pages/settings.js \
+    qml/pages/AddPlayer.qml \
+    qml/pages/ChangePlayer.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
@@ -40,4 +43,4 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/harbour-math-teacher-de.ts
+TRANSLATIONS += translations/harbour-math-teacher-fi.ts

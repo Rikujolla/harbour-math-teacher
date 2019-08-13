@@ -24,44 +24,69 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import QtQuick.LocalStorage 2.0
+import "./settings.js" as Mysets
+
 
 Page {
     id: page
+
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
-    property int re_sult
-
 
     SilicaListView {
         id: listView
-        model: mistakesModel
+        PullDownMenu{
+            MenuItem {
+                text: qsTr("Add player")
+                onClicked: {
+                    var dialog = pageStack.push(Qt.resolvedUrl("AddPlayer.qml"),
+                                                {"name": ''})
+                    dialog.accepted.connect(function() {
+                        player_name = dialog.name
+                        Mysets.saveSettings()
+                        Mysets.loadPlayers();
+                    })
+                }
+            }
+
+        }
+
+        model: players
         anchors.fill: parent
         header: PageHeader {
-            title: qsTr("Learning page")
+            title: qsTr("Player selection")
         }
         delegate: BackgroundItem {
             id: delegate
 
             Label {
                 x: Theme.horizontalPageMargin
-                text: first  + " x " + second + " = " + first*second
+                text: player
                 anchors.verticalCenter: parent.verticalCenter
                 color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
             }
             onClicked: {
-                if (mistakesModel.count >1) {
-                    re_sult = mistakesModel.get(index).first * mistakesModel.get(index).second
-                    mistakesModel.remove(index)
-                    coins++;
-                    pageStack.push(Qt.resolvedUrl("FlowersPage.qml"), {flower_result: re_sult})
-                }
-                else {
-                    mistakesModel.remove(index)
-                    pageStack.replace(Qt.resolvedUrl("FunPage.qml"))
-                }
+                player_name = players.get(index).player
+                Mysets.updateActivePlayer(index)
+                Mysets.loadSettings()
+                pageStack.pop()
             }
         }
         VerticalScrollDecorator {}
-
     }
+
+    ListModel {
+        id: players
+        ListElement {
+            player: ""
+            status: ""
+        }
+    }
+
+    Component.onCompleted: {
+        //players.clear();
+        Mysets.loadPlayers();
+    }
+
 }

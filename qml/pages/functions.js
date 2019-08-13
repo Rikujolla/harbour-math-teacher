@@ -88,7 +88,6 @@ function multiplier_lottery(_a) {
     var z = Math.floor(Math.random() * upper)
     while (isInArray(z,skipped_numbers)) {
         z = Math.floor(Math.random() * upper)
-        //console.log("zeta ", z)
     }
     return z
 }
@@ -101,7 +100,6 @@ function fill_answers(a,b,c,_level) {
     var sum_visible = 1; //counts the sum of visible answers
     var right_position = Math.floor(Math.random() * 9);
     valuearray.push(c);
-    //console.log("vastaus", c, "kohta", right_position)
     // used numbers by levels
     switch (_level) {
     case 0:
@@ -146,7 +144,6 @@ function fill_answers(a,b,c,_level) {
         else {
             var z = Math.floor(Math.random() * (11)) * Math.floor(Math.random() * (upper + 1))
             if (isInArray(z, valuearray)) {
-                //console.log(z, "array")
                 answers.set(i,{"box_color":"blue", "answer":z, "click": true, "box_visible":false})
             }
             else if (__visible) {

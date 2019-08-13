@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="144.47392"
+   width="194.7766"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="6_l.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata9">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs7" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="723"
+     inkscape:window-height="480"
+     id="namedview5"
+     showgrid="false"
+     inkscape:zoom="0.472"
+     inkscape:cx="241.77281"
+     inkscape:cy="-39.767787"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3" />
+  <path
+     style="fill:#000000"
+     d="M 12.80362,69.609002 43.34879,45.015582 75.375,21.903204 64.97959,4.160062 71.99349,1.910541 79.84098,13.733609 90.70646,0 95.742,3.258293 82.56072,18.809239 64.72897,70.556872 56.76466,74.296512 71.09778,32.38615 19.44239,72.815462 C 51.49092,144.61394 120.2693,156.28208 190.23252,115.52132 L 194.7766,122.0203 C 125.60295,159.61504 54.89271,153.61527 14.74749,76.281102 V 76.281102 L 17.35783,83.042052 12.79621,84.108402 0,55.724232 2.88804,53.391582 Z"
+     id="06_bridle"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccccccccccccccccccc"
+     inkscape:label="#Bridle" />
+</svg>

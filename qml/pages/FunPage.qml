@@ -118,7 +118,7 @@ Page {
                         border.width: 3
                         border.color: "black"
                         Image {
-                            source: hh_source_l
+                            source: asset_path + hh_source_l
                             opacity: coins > index*20 ? 1.0: 0.2
                             anchors.fill: parent
                             MouseArea {
@@ -127,7 +127,6 @@ Page {
                                 width: grid.cellWidth
                                 enabled: coins > index*20 ? true: false
                                 onClicked: {
-                                    //console.log(index);
                                     if (horse_harness.get(index).hh_visible === false){
                                         horse_harness.set(index,{"hh_visible":true})
                                     }
@@ -156,7 +155,7 @@ Page {
         ListElement {
             hh_name: "Forelock"
             hh_source:"2.svg"
-            hh_source_l:"./assets/asset1/2_l.svg"
+            hh_source_l:"2_l.svg"
             hh_enabled:false
             hh_visible: false
             hh_x: 700
@@ -165,7 +164,7 @@ Page {
         ListElement {
             hh_name: "Mane"
             hh_source:"3.svg"
-            hh_source_l:"./assets/asset1/3_l.svg"
+            hh_source_l:"3_l.svg"
             hh_enabled:false
             hh_visible: false
             hh_x: 250
@@ -174,7 +173,16 @@ Page {
         ListElement {
             hh_name: "Tail"
             hh_source:"4.svg"
-            hh_source_l:"./assets/asset1/4_l.svg"
+            hh_source_l:"4_l.svg"
+            hh_enabled:false
+            hh_visible: false
+            hh_x: 250
+            hh_y: 450
+        }
+        ListElement {
+            hh_name: "Halter"
+            hh_source:"5.svg"
+            hh_source_l:"5_l.svg"
             hh_enabled:false
             hh_visible: false
             hh_x: 250
@@ -183,7 +191,7 @@ Page {
         ListElement {
             hh_name: "Bridle"
             hh_source:"6.svg"
-            hh_source_l:"./assets/asset1/6_l.svg"
+            hh_source_l:"6_l.svg"
             hh_enabled:false
             hh_visible: false
             hh_x: 250
@@ -192,23 +200,23 @@ Page {
         ListElement {
             hh_name: "Saddle"
             hh_source:"7.svg"
-            hh_source_l:"./assets/asset1/7_l.svg"
+            hh_source_l:"7_l.svg"
             hh_enabled:false
             hh_visible: false
             hh_x: 322 //500
             hh_y: 226 //250
 
         }
-        /**ListElement {
+        ListElement {
             hh_name: "Leg wraps"
-            hh_source:"./assets/asset1/7.svg"
-            hh_source_l:"./assets/asset1/7_l.svg"
+            hh_source:"8.svg"
+            hh_source_l:"8_l.svg"
             hh_enabled:false
             hh_visible: false
             hh_x: 322 //500
             hh_y: 226 //250
 
-        }*/
+        }
     }
 }
 

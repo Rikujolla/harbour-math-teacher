@@ -63,7 +63,7 @@ Page {
                     right: parent.right
                     margins: Theme.paddingLarge
                 }
-                text: {qsTr("The idea of the software is to support your daily working times automatically based on sensor data. You create areas and the Jolla detects whether you are inside the boundary or galloping freely elsewhere.")
+                text: {qsTr("The idea of the software is to help children to learn maths.")
                 }
             }
 
@@ -79,14 +79,8 @@ Page {
                     margins: Theme.paddingLarge
                 }
                 text: {
-                    qsTr("German (John Gibbon)") + "\n" +
-                    qsTr("Finnish (Riku Lahtinen)") + "\n" +
-                    qsTr("French (Jordi)") + "\n" +
-                    qsTr("Italian (Tichy)") + "\n" +
-                    qsTr("Dutch (Nathan Follens)") + "\n" +
-                    qsTr("Russian (lewa)") + "\n" +
-                    qsTr("Swedish (Åke Engelbrektson)") + "\n" +
-                    qsTr("Chinese (0312birdzhang)")
+                    qsTr("Finnish (Riku Lahtinen)") // + "\n" +
+                            //qsTr("Other (other)")
                 }
             }
 
@@ -102,7 +96,7 @@ Page {
                     margins: Theme.paddingLarge
                 }
                 text: {
-                    qsTr("App icon (JSEHV)")
+                    qsTr("App icon (Riku Lahtinen)")
                 }
             }
 
@@ -119,10 +113,8 @@ Page {
                 }
                 text: qsTr("Copyright (c) 2015, Riku Lahtinen") + "\n"
                       + qsTr("Licensed under BSD. License, source code and more information:") + "\n"
-                      + ("https://github.com/Rikujolla/oontoissa")
+                      + ("https://github.com/Rikujolla/harbour-math-teacher")
             }
-
-//loppusulkeet
         }
     }
 }

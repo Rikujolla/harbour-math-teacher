@@ -1,5 +1,31 @@
+/*Copyright (c) 2019, Riku Lahtinen
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import QtQuick.LocalStorage 2.0
+import "./settings.js" as Mysets
 import "./functions.js" as MyFunc
 
 Page {
@@ -28,6 +54,21 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
             }
             MenuItem {
+                text: qsTr("Change player")
+                onClicked: pageStack.push(Qt.resolvedUrl("ChangePlayer.qml"))
+            }
+            /*MenuItem {
+                text: qsTr("Add player")
+                onClicked: {
+                    var dialog = pageStack.push(Qt.resolvedUrl("AddPlayer.qml"),
+                                                {"name": ''})
+                    dialog.accepted.connect(function() {
+                        player_name = dialog.name
+                        Mysets.saveSettings()
+                    })
+                }
+            }*/
+            /*MenuItem {
                 text: qsTr("Start")
                 onClicked: {
                     //column.a = MyFunc.multiplier_lottery(level)
@@ -36,16 +77,11 @@ Page {
                     MyFunc.fill_answers(a, b, c, level)
                     quiz_started = true
                 }
-            }
+            }*/
         }
 
         // Tell SilicaFlickable the height of its content.
         contentHeight: column.height
-
-        // Place our content in a Column.  The PageHeader is always placed at the top
-        // of the page, followed by our content.
-
-
 
         Column {
             id: column
@@ -54,7 +90,7 @@ Page {
             spacing: Theme.paddingLarge
 
             PageHeader {
-                title: qsTr("Math Page")
+                title: qsTr("Math page")
             }
             Label {
                 x: Theme.horizontalPageMargin
@@ -102,8 +138,8 @@ Page {
                                     MyFunc.not_enable();
                                     break_timer.start()
                                     if (time_slider.value < time_slider.maximumValue) {
-                                        //console.log(time_slider.value, time_slider.maximumValue)
                                         coins = coins + 1;
+                                        Mysets.saveCoins();
                                         level_points = level_points + 1;
                                     }
                                     time_slider.value = 0;
@@ -191,12 +227,19 @@ Page {
                 }
             }
 
-            Timer {
-                id: timer
-                running: false
-                repeat: timer.value <1000
-                interval: 100
-                onTriggered: console.log (timer.value)
+            Text {
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.primaryColor
+                wrapMode: Text.WordWrap
+                width: parent.width
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                text: {
+                    qsTr("Player") + ": " + player_name
+                }
             }
 
             Timer {
@@ -233,9 +276,9 @@ Page {
                     click: true
                     box_visible:2
                 }
-
             }
         }
     }
+
     Component.onCompleted: {mistakesModel.clear()}
 }
