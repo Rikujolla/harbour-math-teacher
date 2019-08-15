@@ -27,16 +27,22 @@ import Sailfish.Silica 1.0
 import QtQuick.LocalStorage 2.0
 import "./settings.js" as Mysets
 
-
 Page {
     id: page
-
+    property bool delete_mode: false
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
 
     SilicaListView {
         id: listView
         PullDownMenu{
+            MenuItem {
+                text: qsTr("Delete player")
+                onClicked: {
+                    delete_mode = true;
+                }
+            }
+
             MenuItem {
                 text: qsTr("Add player")
                 onClicked: {
@@ -49,13 +55,12 @@ Page {
                     })
                 }
             }
-
         }
 
         model: players
         anchors.fill: parent
         header: PageHeader {
-            title: qsTr("Player selection")
+            title: delete_mode ? qsTr("Player deletion") : qsTr("Player selection")
         }
         delegate: BackgroundItem {
             id: delegate
@@ -64,15 +69,29 @@ Page {
                 x: Theme.horizontalPageMargin
                 text: player
                 anchors.verticalCenter: parent.verticalCenter
-                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
+                color: delete_mode ? "red": (delegate.highlighted ? Theme.highlightColor : Theme.primaryColor)
             }
             onClicked: {
                 player_name = players.get(index).player
-                Mysets.updateActivePlayer(index)
-                Mysets.loadSettings()
-                pageStack.pop()
+                if (!delete_mode) {
+                    Mysets.updateActivePlayer(index)
+                    Mysets.loadSettings()
+                    pageStack.pop()
+                }
+                else {
+                    remorseDel.execute(qsTr("Deleting"), console.log("remorse") , 3000 )
+                }
             }
         }
+
+        RemorsePopup { id: remorseDel
+            onTriggered: {
+                Mysets.deletePlayer(player_name)
+                delete_mode = false
+                Mysets.loadPlayers();
+            }
+        }
+
         VerticalScrollDecorator {}
     }
 
@@ -85,7 +104,6 @@ Page {
     }
 
     Component.onCompleted: {
-        //players.clear();
         Mysets.loadPlayers();
     }
 

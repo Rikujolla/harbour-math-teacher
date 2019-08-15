@@ -36,6 +36,8 @@ ApplicationWindow
     //allowedOrientations: defaultAllowedOrientations
 
     property int coins: 0 // Global property for money
+    property int level_points : 0 // Normally increase when you get a point when answering right
+    property int level: 0 //
     property int questions_count: 5
     property string asset_path : "./assets/asset1/" //Asset number
     property string player_name: "Horse rider" // Default player name

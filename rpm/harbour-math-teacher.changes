@@ -12,6 +12,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu Aug 15 2019 Riku Lahtinen <rikul.lajolla@kiu.as> 0.0.4-1
+- First RPM release to MerObs, OpenRepos and Jolla Harbour
+
 * Tue Aug 13 2019 Riku Lahtinen <rikul.lajolla@kiu.as> 0.0.3-1
 - Source only release
 

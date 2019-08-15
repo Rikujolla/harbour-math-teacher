@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="47.06155"
+   width="51.122566"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="8_l.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1853"
+     inkscape:window-height="1025"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="1.3350176"
+     inkscape:cx="107.06936"
+     inkscape:cy="200.78861"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     style="fill:#375833;fill-opacity:1"
+     d="M 1.19221,3.31456 0.916,0 8.75084,5.84508 16.07797,11.31139 16.3496,17.13216 21.3306,17.54703 21.379,23.47123 16.40794,23.76133 16.27357,28.73819 20.96925,28.74219 20.90035,34.49368 16.66145,34.96574 15.77892,47.06155 0,46.83638 1.26,32.66726 1.41081,20.20956 V 12.21783 Z"
+     id="08_forward_leg_wraps"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccccccccccccccc"
+     inkscape:label="Forward leg wraps" />
+  <path
+     style="fill:#375833;fill-opacity:1"
+     d="M 33.165418,21.629789 33.383068,11.157239 41.886598,11.207439 51.122568,11.261959 49.446958,23.998409 47.038278,37.551499 C 42.651798,42.607119 38.795238,45.018649 34.119238,38.409199 31.168998,35.535429 33.413978,31.300919 32.641798,27.812019 L 30.141118,27.915269 30.861458,21.377179 Z"
+     id="08_rear_leg_wraps"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccccccc"
+     inkscape:label="Rear leg wraps" />
+</svg>

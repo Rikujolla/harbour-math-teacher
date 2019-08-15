@@ -45,13 +45,36 @@
     </message>
 </context>
 <context>
+    <name>AddPlayer</name>
+    <message>
+        <source>Add your player name!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Player name</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ChangePlayer</name>
+    <message>
+        <source>Delete player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add player</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Player selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add player</source>
+        <source>Player deletion</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -90,6 +113,14 @@
         <source>Congratulations!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Fun</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QuizPage</name>
@@ -107,6 +138,14 @@
     </message>
     <message>
         <source>Math page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Coins</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

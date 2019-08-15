@@ -24,6 +24,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 import QtQuick 2.2
 import Sailfish.Silica 1.0
+import QtQuick.LocalStorage 2.0
+import "./settings.js" as Mysets
 
 Dialog {
     id: dialog_page
@@ -32,8 +34,8 @@ Dialog {
         width: parent.width
 
         DialogHeader {
-            acceptText : "Fun"
-            cancelText: "Play"
+            acceptText : qsTr("Fun")
+            cancelText: qsTr("Play")
         }
 
         Text {
@@ -76,7 +78,8 @@ Dialog {
 
 
     onDone: {
-        coins = coins + 3
+        coins = coins + 3;
+        Mysets.saveCoins();
         if (result == DialogResult.Accepted) {
             pageStack.replace(Qt.resolvedUrl("FunPage.qml"))
         }

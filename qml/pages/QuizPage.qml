@@ -30,11 +30,6 @@ import "./functions.js" as MyFunc
 
 Page {
     id: page
-
-    //property int coins: 0 // To earn coins to buy food, services and equipment
-    property int level_points : 0 // Normally increase when you get a point when answering right
-    property int level: 0 //
-    //property int questions_count: 5 //
     property int a:1
     property int b:2
     property int c:-1
@@ -43,11 +38,9 @@ Page {
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
 
-    // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
         anchors.fill: parent
 
-        // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
             MenuItem {
                 text: qsTr("About")
@@ -57,27 +50,6 @@ Page {
                 text: qsTr("Change player")
                 onClicked: pageStack.push(Qt.resolvedUrl("ChangePlayer.qml"))
             }
-            /*MenuItem {
-                text: qsTr("Add player")
-                onClicked: {
-                    var dialog = pageStack.push(Qt.resolvedUrl("AddPlayer.qml"),
-                                                {"name": ''})
-                    dialog.accepted.connect(function() {
-                        player_name = dialog.name
-                        Mysets.saveSettings()
-                    })
-                }
-            }*/
-            /*MenuItem {
-                text: qsTr("Start")
-                onClicked: {
-                    //column.a = MyFunc.multiplier_lottery(level)
-                    a = Math.floor(Math.random() * 11);
-                    b = MyFunc.multiplier_lottery(level)
-                    MyFunc.fill_answers(a, b, c, level)
-                    quiz_started = true
-                }
-            }*/
         }
 
         // Tell SilicaFlickable the height of its content.
@@ -134,13 +106,13 @@ Page {
                                 quiz_started = true
                                 if (answers.get(index).answer === a * b){
                                     answers.set(index,{"box_color":"green"})
-                                    //m_area.enabled = false;
                                     MyFunc.not_enable();
                                     break_timer.start()
                                     if (time_slider.value < time_slider.maximumValue) {
                                         coins = coins + 1;
                                         Mysets.saveCoins();
                                         level_points = level_points + 1;
+                                        Mysets.saveLevelPoints();
                                     }
                                     time_slider.value = 0;
                                     questions_count = questions_count - 1;
@@ -150,6 +122,7 @@ Page {
                                     }
                                     else if (MyFunc.level_check(level, level_points) > level) {
                                         level = MyFunc.level_check(level, level_points);
+                                        Mysets.saveLevelPoints();
                                         pageStack.push(Qt.resolvedUrl("LevelChange.qml"))
                                     }
                                 }
@@ -157,7 +130,6 @@ Page {
                                     answers.set(index,{"box_color":"red"})
                                     mistakesModel.set(mistakesModel.count,{"first": a, "second":b})
                                     if (mistakesModel.count > 5 || questions_count < 1) {
-                                        //MyFunc.not_enable();
                                         questions_count = 5;
                                         pageStack.push(Qt.resolvedUrl("LearningPage.qml"))
                                     }
@@ -175,7 +147,7 @@ Page {
                 value: 0
                 Timer {
                     id:timer_slider
-                    running: quiz_started && mistakesModel.count < 6
+                    running: quiz_started && mistakesModel.count < 6 && Qt.application.active
                     repeat: true
                     interval: 100
                     onTriggered: time_slider.value = time_slider.value + interval/1000
@@ -188,7 +160,6 @@ Page {
                 Rectangle {
                     width: page.width/10
                     height: width
-                    //anchors.horizontalCenter: parent.horizontalCenter
                     color: "light grey"
                     border.color: "red"
                     border.width: (6 - mistakesModel.count)*width/4.0
@@ -197,7 +168,6 @@ Page {
                 Rectangle {
                     width: page.width/10
                     height: width
-                    //anchors.horizontalCenter: parent.horizontalCenter
                     color: "light grey"
                     border.color: "red"
                     border.width: (4 - mistakesModel.count)*width/4.0
@@ -206,7 +176,6 @@ Page {
                 Rectangle {
                     width: page.width/10
                     height: width
-                    //anchors.horizontalCenter: parent.horizontalCenter
                     color: "light grey"
                     border.color: "red"
                     border.width: (2 - mistakesModel.count)*width/4.0
@@ -214,14 +183,14 @@ Page {
                 }
                 Label {
                     x: Theme.horizontalPageMargin
-                    text: "Level " + level
+                    text: qsTr("Level") + " " + level
                     color: Theme.secondaryHighlightColor
                     font.pixelSize: Theme.fontSizeMedium
                 }
 
                 Label {
                     x: Theme.horizontalPageMargin
-                    text: "Coins " + coins
+                    text: qsTr("Coins") + " " + coins
                     color: Theme.secondaryHighlightColor
                     font.pixelSize: Theme.fontSizeMedium
                 }
@@ -248,11 +217,9 @@ Page {
                 repeat: false
                 interval: 500
                 onTriggered: {
-                    //column.a = MyFunc.multiplier_lottery(level)
                     a = Math.floor(Math.random() * 11);
                     b = MyFunc.multiplier_lottery(level)
                     MyFunc.fill_answers(a, b, c, level)
-                    //m_area.enabled = true;
                 }
             }
 

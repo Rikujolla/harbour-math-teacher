@@ -45,14 +45,37 @@
     </message>
 </context>
 <context>
+    <name>AddPlayer</name>
+    <message>
+        <source>Add your player name!</source>
+        <translation>Lisää pelaajanimesi!</translation>
+    </message>
+    <message>
+        <source>Player name</source>
+        <translation>Pelaajanimi</translation>
+    </message>
+</context>
+<context>
     <name>ChangePlayer</name>
+    <message>
+        <source>Delete player</source>
+        <translation>Poista pelaaja</translation>
+    </message>
+    <message>
+        <source>Add player</source>
+        <translation>Lisää pelaaja</translation>
+    </message>
     <message>
         <source>Player selection</source>
         <translation>Pelaajavalinta</translation>
     </message>
     <message>
-        <source>Add player</source>
-        <translation>Lisää pelaaja</translation>
+        <source>Player deletion</source>
+        <translation>Pelaajan poistaminen</translation>
+    </message>
+    <message>
+        <source>Deleting</source>
+        <translation>Poistetaan</translation>
     </message>
 </context>
 <context>
@@ -90,6 +113,14 @@
         <source>Congratulations!</source>
         <translation>Onnittelut!</translation>
     </message>
+    <message>
+        <source>Fun</source>
+        <translation>Huvi</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation>Peli</translation>
+    </message>
 </context>
 <context>
     <name>QuizPage</name>
@@ -108,6 +139,14 @@
     <message>
         <source>Math page</source>
         <translation>Matikkasivu</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Taso</translation>
+    </message>
+    <message>
+        <source>Coins</source>
+        <translation>Kolikot</translation>
     </message>
 </context>
 </TS>

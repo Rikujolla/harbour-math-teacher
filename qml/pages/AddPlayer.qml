@@ -13,8 +13,8 @@
          TextField {
              id: nameField
              width: parent.width
-             placeholderText: "Add your player name?"
-             label: "Player name"
+             placeholderText: qsTr("Add your player name!")
+             label: qsTr("Player name")
          }
      }
 
