@@ -10,3 +10,5 @@ Name=Math teacher
 # Remember to comment out the following line, if you do not want to use
 # a different app name in German locale (de).
 Name[fi]=Matikan ope
+Name[fr]=Prof de maths
+Name[zh_CN]=数学教师

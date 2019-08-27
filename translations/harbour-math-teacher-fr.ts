@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fi">
+<TS version="2.1" language="fr">
 <context>
     <name>About</name>
     <message>
         <source>About page</source>
-        <translation>Tietosivu</translation>
+        <translation>Page À propos</translation>
     </message>
     <message>
         <source>Idea</source>
-        <translation>Idea</translation>
+        <translation>Idée</translation>
     </message>
     <message>
         <source>Translations</source>
-        <translation>Käännökset</translation>
+        <translation>Traductions</translation>
     </message>
     <message>
         <source>Finnish (Riku Lahtinen)</source>
-        <translation>Suomeksi (Riku Lahtinen)</translation>
+        <translation>Finnois (Riku Lahtinen)</translation>
     </message>
     <message>
         <source>Contributions</source>
-        <translation>Avustukset</translation>
+        <translation>Contributions</translation>
     </message>
     <message>
         <source>Licence</source>
-        <translation>Lisenssi</translation>
+        <translation>Licence</translation>
     </message>
     <message>
         <source>Copyright (c) 2015, Riku Lahtinen</source>
@@ -33,161 +33,161 @@
     </message>
     <message>
         <source>Licensed under BSD. License, source code and more information:</source>
-        <translation>BSD-lisenssi. Lisenssi, lähdekoodi ja lisätietoja:</translation>
+        <translation>Sous licence BSD. Licence, code source et plus d&apos;informations :</translation>
     </message>
     <message>
         <source>The idea of the software is to help children to learn maths.</source>
-        <translation>Ohjelman ideana on auttaa lapsia oppimaan matematiikkaa.</translation>
+        <translation>L’idée du logiciel est d’aider les enfants à apprendre les maths.</translation>
     </message>
     <message>
         <source>App icon (Riku Lahtinen)</source>
-        <translation>Sovelluksen ikoni (Riku Lahtinen)</translation>
+        <translation>Icônne de l’application (Riku Lahtinen)</translation>
     </message>
     <message>
         <source>Chinese (China) (Historyscholar)</source>
-        <translation>Kiinaksi (Kiina) (Historyscholar)</translation>
+        <translation>Mandarin (Chine) (Historyscholar)</translation>
     </message>
     <message>
         <source>Math teacher, version</source>
         <extracomment>The name of the app followed with a version number</extracomment>
-        <translation>Matikan ope</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>French (Quentin)</source>
-        <translation>Ranskaksi (Quentin)</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>AddPlayer</name>
     <message>
         <source>Add your player name!</source>
-        <translation>Lisää pelaajanimesi!</translation>
+        <translation>Nommer votre joueur !</translation>
     </message>
     <message>
         <source>Player name</source>
-        <translation>Pelaajanimi</translation>
+        <translation>Nom du joueur</translation>
     </message>
 </context>
 <context>
     <name>ChangePlayer</name>
     <message>
         <source>Delete player</source>
-        <translation>Poista pelaaja</translation>
+        <translation>Supprimer le joueur</translation>
     </message>
     <message>
         <source>Add player</source>
-        <translation>Lisää pelaaja</translation>
+        <translation>Ajouter un joueur</translation>
     </message>
     <message>
         <source>Player selection</source>
-        <translation>Pelaajavalinta</translation>
+        <translation>Section joueurs</translation>
     </message>
     <message>
         <source>Player deletion</source>
-        <translation>Pelaajan poistaminen</translation>
+        <translation>Suppression du joueur</translation>
     </message>
     <message>
         <source>Deleting</source>
-        <translation>Poistetaan</translation>
+        <translation>Suppression</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Math teacher</source>
-        <translation>Matikan ope</translation>
+        <translation>Prof de maths</translation>
     </message>
 </context>
 <context>
     <name>FunPage</name>
     <message>
         <source>Fun page</source>
-        <translation>Huvisivu</translation>
+        <translation>Page divertissement</translation>
     </message>
     <message>
         <source>Change horse</source>
-        <translation>Vaihda hevosta</translation>
+        <translation>Changer de cheval</translation>
     </message>
     <message>
         <source>Forelock</source>
-        <translation>Otsatukka</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mane</source>
-        <translation>Harja</translation>
+        <translation>Crinière</translation>
     </message>
     <message>
         <source>Tail</source>
-        <translation>Häntä</translation>
+        <translation>Queue</translation>
     </message>
     <message>
         <source>Halter</source>
-        <translation>Riimu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Bridle</source>
-        <translation>Suitset</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Saddle</source>
-        <translation>Satula</translation>
+        <translation>Selle</translation>
     </message>
     <message>
         <source>Leg wraps</source>
-        <translation>Jalkasuojat</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>LearningPage</name>
     <message>
         <source>Learning page</source>
-        <translation>Opiskelusivu</translation>
+        <translation>Page apprentissage</translation>
     </message>
 </context>
 <context>
     <name>LevelChange</name>
     <message>
         <source>You are now on the next level!</source>
-        <translation>Olet nyt seuraavalla tasolla!</translation>
+        <translation>Vous passez au niveau suivant !</translation>
     </message>
     <message>
         <source>Congratulations!</source>
-        <translation>Onnittelut!</translation>
+        <translation>Félicitations !</translation>
     </message>
     <message>
         <source>Fun</source>
-        <translation>Huvi</translation>
+        <translation>Divertissement</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation>Peli</translation>
+        <translation>Jouer</translation>
     </message>
 </context>
 <context>
     <name>QuizPage</name>
     <message>
         <source>About</source>
-        <translation>Tietoja</translation>
+        <translation>À propos</translation>
     </message>
     <message>
         <source>Change player</source>
-        <translation>Vaihda pelaajaa</translation>
+        <translation>Changer de joueur</translation>
     </message>
     <message>
         <source>Player</source>
-        <translation>Pelaaja</translation>
+        <translation>Joueur</translation>
     </message>
     <message>
         <source>Math page</source>
-        <translation>Matikkasivu</translation>
+        <translation>Page de maths</translation>
     </message>
     <message>
         <source>Level</source>
-        <translation>Taso</translation>
+        <translation>Niveau</translation>
     </message>
     <message>
         <source>Coins</source>
-        <translation>Kolikot</translation>
+        <translation>Pièces</translation>
     </message>
 </context>
 </TS>

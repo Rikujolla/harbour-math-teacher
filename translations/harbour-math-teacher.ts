@@ -43,6 +43,19 @@
         <source>App icon (Riku Lahtinen)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Chinese (China) (Historyscholar)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Math teacher, version</source>
+        <extracomment>The name of the app followed with a version number</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>French (Quentin)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddPlayer</name>
@@ -93,6 +106,34 @@
     </message>
     <message>
         <source>Change horse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forelock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mane</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Halter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bridle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saddle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leg wraps</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

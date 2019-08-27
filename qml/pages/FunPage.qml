@@ -23,12 +23,24 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import QtQuick 2.0
+import QtQuick 2.2
 import Sailfish.Silica 1.0
 
 
 Page {
     id: page
+    property var harness_list: [{msg:qsTr("Forelock")},
+        {msg:qsTr("Mane")},
+        {msg:qsTr("Tail")},
+        {msg:qsTr("Halter")},
+        {msg:qsTr("Bridle")},
+        {msg:qsTr("Saddle")},
+        {msg:qsTr("Leg wraps")}
+    ]
+    property int rgp_r: 1
+    property int rgp_g: 1
+    property int rgp_b: 0
+    property int rgp_a: 1
 
     SilicaFlickable {
         anchors.fill: parent
@@ -78,18 +90,6 @@ Page {
                 width: page.width
                 height: sourceSize.height*page.width/sourceSize.width
                 fillMode: Image.Stretch
-                /*Canvas {
-                    id: saddle
-                    x: 200
-                    y: 100
-                    width: 100
-                    height: 200
-                    onPaint: {
-                        var ctx = getContext("2d");
-                        ctx.fillStyle = Qt.rgba(1, 1, 0, 1);
-                        ctx.fillRect(0, 0, width, height);
-                    }
-                }*/
                 Repeater {
                     model:horse_harness
                     Image {
@@ -101,6 +101,45 @@ Page {
                         visible: hh_visible
                     }
                 }
+
+               /* // Testing coloring
+                Path {
+                    property string pa: "M 414.71813,206.19712 439.84195,189.98521 471.28667,187.81234 504.30328,190.36674 506.24923,196.702 C 492.90735,197.00853 467.08475,190.59467 475.95825,202.86333 L 491.86711,211.5525 519.97499,214.63183 C 518.30294,218.90865 474.68565,216.47376 469.56439,220.39861 458.25529,229.06575 485.28217,244.07631 509.82399,256.4017 552.00567,287.42837 "
+                    property string pb: "531.01611,292.04408 505.67725,283.68808 494.56225,280.02268 483.46694,267.57978 475.0558,264.3631 464.1642,251.45701 459.73359,262.24121 454.24045,269.1295 393.97094,324.87554 413.043,281.26825 400.576,281.85755 401.11442,274.1482 383.26693,281.14759 404.78365,256.6556 410.76782,249.3275 415.96455,257.74828 422.79843,233.42578 429.66611,213.51364 421.50723,210.63159 414.71813,206.19712 Z"
+                    id: color_path
+                    startX: 414; startY: 206
+                    //PathSvg { path: "M 414.71813,206.19712 439.84195,189.98521 471.28667,187.81234 504.30328,190.36674 506.24923,196.702 C 492.90735,197.00853 467.08475,190.59467 475.95825,202.86333 L 491.86711,211.5525 519.97499,214.63183 C 518.30294,218.90865 474.68565,216.47376 469.56439,220.39861 458.25529,229.06575 485.28217,244.07631 509.82399,256.4017 552.00567,287.42837 531.01611,292.04408 505.67725,283.68808 494.56225,280.02268 483.46694,267.57978 475.0558,264.3631 464.1642,251.45701 459.73359,262.24121 454.24045,269.1295 393.97094,324.87554 413.043,281.26825 400.576,281.85755 401.11442,274.1482 383.26693,281.14759 404.78365,256.6556 410.76782,249.3275 415.96455,257.74828 422.79843,233.42578 429.66611,213.51364 421.50723,210.63159 414.71813,206.19712 Z" }
+                    PathSvg { path: "M 414.71813,206.19712 439.84195,189.98521 471.28667,187.81234 504.30328,190.36674 506.24923,196.702 C 492.90735,197.00853 467.08475,190.59467 475.95825,202.86333 L 491.86711,211.5525 519.97499,214.63183
+C 518.30294,218.90865 474.68565,216.47376 469.56439,220.39861 458.25529,229.06575 485.28217,244.07631 509.82399,256.4017 552.00567,287.42837 531.01611,292.04408 505.67725,283.68808 494.56225,280.02268 483.46694,267.57978 475.0558,264.3631 464.1642,251.45701 459.73359,262.24121 454.24045,269.1295 393.97094,324.87554 413.043,281.26825 400.576,281.85755 401.11442,274.1482 383.26693,281.14759 404.78365,256.6556 410.76782,249.3275 415.96455,257.74828 422.79843,233.42578 429.66611,213.51364 421.50723,210.63159 414.71813,206.19712 Z" }
+                }
+
+
+                Canvas {
+                    id: saddle
+                    x: 0
+                    y: 0
+                    width: 750
+                    height: 500
+                    onPaint: {
+                        var ctx = getContext("2d");
+                        ctx.strokeStyle = Qt.rgba(rgp_r, rgp_g, rgp_b, rgp_a);
+                        ctx.fillStyle = Qt.rgba(rgp_r, rgp_g, rgp_b, rgp_a);
+                        ctx.scale(page.width/750, page.width/750)
+                        ctx.path = color_path;
+                        ctx.stroke();
+                    }
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            rgp_r = 0
+                            console.log("red")
+                            saddle.requestPaint()
+                        }
+
+                    }
+                }
+
+                // End testing */
             }
             BackgroundItem {
                 width: page.width
@@ -114,10 +153,11 @@ Page {
                     delegate: Rectangle {
                         id:hh_rec
                         width: grid.cellWidth
-                        height: grid.cellHeight
+                        height: 0.85*grid.cellHeight
                         border.width: 3
                         border.color: "black"
                         Image {
+                            fillMode: Image.PreserveAspectFit
                             source: asset_path + hh_source_l
                             opacity: coins > index*20 ? 1.0: 0.2
                             anchors.fill: parent
@@ -136,9 +176,16 @@ Page {
                                 }
                             }
                         } // Image
+                        Rectangle {
+                            width:grid.cellWidth
+                            height:0.15*grid.cellWidth
+                            color:"white"
+                            anchors.top: hh_rec.bottom
+                        }
+
                         Text {
-                            text: hh_name
-                            anchors.bottom: hh_rec.bottom
+                            text: harness_list[index].msg
+                            anchors.top: hh_rec.bottom
                             anchors.horizontalCenter:  hh_rec.horizontalCenter
                         }
                     }
@@ -146,7 +193,6 @@ Page {
 
             }
 
-            //loppusulkeet
         }
     }
 

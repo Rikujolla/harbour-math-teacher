@@ -34,7 +34,7 @@ function multiplier_lottery(_a) {
         upper = 11;
         lower = 0;
         for (i = 3;i<10;i++){
-            if (i != 5) {
+            if (i !== 5) {
                 skipped_numbers.push(i);
             }
         }
@@ -43,7 +43,7 @@ function multiplier_lottery(_a) {
         upper = 11;
         lower = 0;
         for (i = 4;i<10;i++){
-            if (i != 5) {
+            if (i !== 5) {
                 skipped_numbers.push(i);
             }
         }
@@ -156,7 +156,6 @@ function fill_answers(a,b,c,_level) {
             }
         }
     }
-
 }
 
 function level_check(_level, _level_points) {
