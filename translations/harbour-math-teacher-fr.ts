@@ -136,6 +136,14 @@
         <source>Leg wraps</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Horse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Patches</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LearningPage</name>
