@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="117.63789"
+   width="264.15973"
+   version="1.1"
+   id="svg973"
+   sodipodi:docname="1_l.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata979">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs977" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1853"
+     inkscape:window-height="1025"
+     id="namedview975"
+     showgrid="false"
+     inkscape:zoom="1.688"
+     inkscape:cx="92.735487"
+     inkscape:cy="55.45023"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg973" />
+  <path
+     style="fill:#ffd42a;fill-opacity:1"
+     d="M 174.21902,18.38478 199.34284,2.17287 230.78756,0 263.80417,2.5544 C 272.08416,63.59124 132.68993,111.43124 164.28454,68.84326 178.7407,58.20857 198.20888,33.85691 174.21902,18.38478 Z"
+     id="01_rear_blotch"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccc"
+     inkscape:label="Rear blotch" />
+  <path
+     style="fill:#ffd42a;fill-opacity:1"
+     d="M 0,46.99215 C 15.98982,38.50294 28.44365,34.25784 40.22228,39.24444 L 60.02127,58.68988 C 79.20544,62.09571 74.48382,89.82348 84.61932,117.63789 L 56.99417,113.86124 C 28.34638,107.72766 16.1347,90.95895 3.03984,74.76171 Z"
+     id="01_forward_blotch"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccc"
+     inkscape:label="Forward_blotch" />
+</svg>

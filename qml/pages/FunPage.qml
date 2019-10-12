@@ -25,11 +25,17 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
+import "./horse.js" as Horse
+//These patches mean large coloured areas on horse skin, e.g. https://en.wikipedia.org/wiki/Pinto_horse
 
 
 Page {
     id: page
-    property var harness_list: [{msg:qsTr("Forelock")},
+    property var harness_list: [
+        {msg:qsTr("Horse")},
+        //: These patches mean large coloured areas on horse skin, e.g. https://en.wikipedia.org/wiki/Pinto_horse
+        {msg:qsTr("Patches")},
+        {msg:qsTr("Forelock")},
         {msg:qsTr("Mane")},
         {msg:qsTr("Tail")},
         {msg:qsTr("Halter")},
@@ -37,10 +43,8 @@ Page {
         {msg:qsTr("Saddle")},
         {msg:qsTr("Leg wraps")}
     ]
-    property int rgp_r: 1
-    property int rgp_g: 1
-    property int rgp_b: 0
-    property int rgp_a: 1
+    property string blotch_color: "transparent"
+    property var myColors: [ "#000000", "#ffffff", "#ffd633", "#cca300", "#cc4400", "#bf4040", "#cc6600", "#8a8a5c", "#990000", "#999900", "#808000", "#e65c00", "#997300", "#862d59", "#992600"]
 
     SilicaFlickable {
         anchors.fill: parent
@@ -71,79 +75,52 @@ Page {
                 title: qsTr("Fun page")
             }
 
-            /*Rectangle {
-                height: page.width/2
-                width : height
-                radius: page.width/4
-                color: "green"
-            }*/
-            /*Image {
-                source: "./assets/asset1/horse.jpg"
-                width: page.width
-                height: sourceSize.height*page.width/sourceSize.width
-                fillMode: Image.Stretch
-
-            }*/
-            Image {
+            Rectangle {
                 id: horse
-                source: asset_path + "0.svg"
                 width: page.width
-                height: sourceSize.height*page.width/sourceSize.width
-                fillMode: Image.Stretch
-                Repeater {
-                    model:horse_harness
-                    Image {
-                        width:page.width
-                        height:sourceSize.height*page.width/sourceSize.width
-                        source: asset_path + hh_source
-                        //x: hh_x
-                        //y: hh_y
-                        visible: hh_visible
-                    }
-                }
+                height: 500*page.width/750
+                color: "transparent"
 
-               /* // Testing coloring
-                Path {
-                    property string pa: "M 414.71813,206.19712 439.84195,189.98521 471.28667,187.81234 504.30328,190.36674 506.24923,196.702 C 492.90735,197.00853 467.08475,190.59467 475.95825,202.86333 L 491.86711,211.5525 519.97499,214.63183 C 518.30294,218.90865 474.68565,216.47376 469.56439,220.39861 458.25529,229.06575 485.28217,244.07631 509.82399,256.4017 552.00567,287.42837 "
-                    property string pb: "531.01611,292.04408 505.67725,283.68808 494.56225,280.02268 483.46694,267.57978 475.0558,264.3631 464.1642,251.45701 459.73359,262.24121 454.24045,269.1295 393.97094,324.87554 413.043,281.26825 400.576,281.85755 401.11442,274.1482 383.26693,281.14759 404.78365,256.6556 410.76782,249.3275 415.96455,257.74828 422.79843,233.42578 429.66611,213.51364 421.50723,210.63159 414.71813,206.19712 Z"
-                    id: color_path
-                    startX: 414; startY: 206
-                    //PathSvg { path: "M 414.71813,206.19712 439.84195,189.98521 471.28667,187.81234 504.30328,190.36674 506.24923,196.702 C 492.90735,197.00853 467.08475,190.59467 475.95825,202.86333 L 491.86711,211.5525 519.97499,214.63183 C 518.30294,218.90865 474.68565,216.47376 469.56439,220.39861 458.25529,229.06575 485.28217,244.07631 509.82399,256.4017 552.00567,287.42837 531.01611,292.04408 505.67725,283.68808 494.56225,280.02268 483.46694,267.57978 475.0558,264.3631 464.1642,251.45701 459.73359,262.24121 454.24045,269.1295 393.97094,324.87554 413.043,281.26825 400.576,281.85755 401.11442,274.1482 383.26693,281.14759 404.78365,256.6556 410.76782,249.3275 415.96455,257.74828 422.79843,233.42578 429.66611,213.51364 421.50723,210.63159 414.71813,206.19712 Z" }
-                    PathSvg { path: "M 414.71813,206.19712 439.84195,189.98521 471.28667,187.81234 504.30328,190.36674 506.24923,196.702 C 492.90735,197.00853 467.08475,190.59467 475.95825,202.86333 L 491.86711,211.5525 519.97499,214.63183
-C 518.30294,218.90865 474.68565,216.47376 469.56439,220.39861 458.25529,229.06575 485.28217,244.07631 509.82399,256.4017 552.00567,287.42837 531.01611,292.04408 505.67725,283.68808 494.56225,280.02268 483.46694,267.57978 475.0558,264.3631 464.1642,251.45701 459.73359,262.24121 454.24045,269.1295 393.97094,324.87554 413.043,281.26825 400.576,281.85755 401.11442,274.1482 383.26693,281.14759 404.78365,256.6556 410.76782,249.3275 415.96455,257.74828 422.79843,233.42578 429.66611,213.51364 421.50723,210.63159 414.71813,206.19712 Z" }
-                }
-
-
+                // Using tables in Canvas can be learned e.g. from https://felgo.com/doc/qt/qtquick-canvas-tiger-tiger-js/
                 Canvas {
                     id: saddle
                     x: 0
                     y: 0
-                    width: 750
-                    height: 500
+                    width: page.width
+                    height: 500*page.width/750
+
+                    function clear() {
+                        var ctx = getContext("2d");
+                        ctx.reset();
+                        saddle.requestPaint()
+                    }
+
                     onPaint: {
                         var ctx = getContext("2d");
-                        ctx.strokeStyle = Qt.rgba(rgp_r, rgp_g, rgp_b, rgp_a);
-                        ctx.fillStyle = Qt.rgba(rgp_r, rgp_g, rgp_b, rgp_a);
                         ctx.scale(page.width/750, page.width/750)
-                        ctx.path = color_path;
-                        ctx.stroke();
-                    }
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: {
-                            rgp_r = 0
-                            console.log("red")
-                            saddle.requestPaint()
-                        }
+                        for (var i = 0; i < harnesses.count; i++) {
+                            ctx.lineWidth = harnesses.get(i).width;
+                            ctx.path = harnesses.get(i).path;
 
+                            ctx.fillStyle = harnesses.get(i).fill;
+                            if (harnesses.get(i).painted === true ){
+                                ctx.fill();
+                            }
+
+                            ctx.strokeStyle = harnesses.get(i).stroke;
+                            if (harnesses.get(i).painted === true){
+                                ctx.stroke();
+                            }
+                        }
+                        ctx.restore();
                     }
                 }
 
-                // End testing */
+                // End testing
             }
             BackgroundItem {
                 width: page.width
-                height: page.width/4
+                height: 3*page.width/4
                 GridView {
                     id:grid
                     cellWidth: page.width/4
@@ -166,16 +143,36 @@ C 518.30294,218.90865 474.68565,216.47376 469.56439,220.39861 458.25529,229.0657
                                 height: grid.cellHeight
                                 width: grid.cellWidth
                                 enabled: coins > index*20 ? true: false
+
                                 onClicked: {
-                                    if (horse_harness.get(index).hh_visible === false){
-                                        horse_harness.set(index,{"hh_visible":true})
+                                    for (var i = 0; i < harnesses.count; i++) {
+                                        if (harnesses.get(i).index === index && harnesses.get(i).painted === true) {
+                                            harnesses.set(i,{"painted":false});
+                                            saddle.clear();
+                                        }
+                                        else if (harnesses.get(i).index === index && harnesses.get(i).painted === false) {
+                                            harnesses.set(i,{"painted":true})
+                                            saddle.clear();
+                                        }
                                     }
-                                    else {
-                                        horse_harness.set(index,{"hh_visible":false})
-                                    }
+                                }
+
+                                onPressAndHold: {
+                                    var dialog = pageStack.push("Sailfish.Silica.ColorPickerDialog", { "colors": myColors })
+                                    dialog.accepted.connect(function() {
+                                        blotch_color = dialog.color
+                                        for (var i = 0; i < harnesses.count; i++) {
+                                            if (harnesses.get(i).index === index) {
+                                                harnesses.set(i,{"painted":true});
+                                                harnesses.set(i,{"fill":blotch_color, "stroke":blotch_color})
+                                            }
+                                        }
+                                        saddle.clear();
+                                    })
                                 }
                             }
                         } // Image
+
                         Rectangle {
                             width:grid.cellWidth
                             height:0.15*grid.cellWidth
@@ -190,79 +187,85 @@ C 518.30294,218.90865 474.68565,216.47376 469.56439,220.39861 458.25529,229.0657
                         }
                     }
                 }
-
             }
+        }
+    }
 
+    ListModel {
+        id:harnesses
+        ListElement {
+            label:"Halter"
+            index: 5
+            fill: "#502d16"
+            stroke:"#502d16"
+            width:0.1
+            painted:false
+            path:""
         }
     }
 
     ListModel {
         id: horse_harness
         ListElement {
+            hh_name: "Horse"
+            hh_source:"0.svg"
+            hh_source_l:"0_l.svg"
+            hh_enabled:false
+        }
+        ListElement {
+            hh_name: "Spots"
+            hh_source:"1.svg"
+            hh_source_l:"1_l.svg"
+            hh_enabled:false
+        }
+        ListElement {
             hh_name: "Forelock"
             hh_source:"2.svg"
             hh_source_l:"2_l.svg"
             hh_enabled:false
-            hh_visible: false
-            hh_x: 700
-            hh_y: 450
         }
         ListElement {
             hh_name: "Mane"
             hh_source:"3.svg"
             hh_source_l:"3_l.svg"
             hh_enabled:false
-            hh_visible: false
-            hh_x: 250
-            hh_y: 450
         }
         ListElement {
             hh_name: "Tail"
             hh_source:"4.svg"
             hh_source_l:"4_l.svg"
             hh_enabled:false
-            hh_visible: false
-            hh_x: 250
-            hh_y: 450
         }
         ListElement {
             hh_name: "Halter"
             hh_source:"5.svg"
             hh_source_l:"5_l.svg"
             hh_enabled:false
-            hh_visible: false
-            hh_x: 250
-            hh_y: 450
         }
         ListElement {
             hh_name: "Bridle"
             hh_source:"6.svg"
             hh_source_l:"6_l.svg"
             hh_enabled:false
-            hh_visible: false
-            hh_x: 250
-            hh_y: 450
         }
         ListElement {
             hh_name: "Saddle"
             hh_source:"7.svg"
             hh_source_l:"7_l.svg"
             hh_enabled:false
-            hh_visible: false
-            hh_x: 322 //500
-            hh_y: 226 //250
-
         }
         ListElement {
             hh_name: "Leg wraps"
             hh_source:"8.svg"
             hh_source_l:"8_l.svg"
             hh_enabled:false
-            hh_visible: false
-            hh_x: 322 //500
-            hh_y: 226 //250
-
         }
+    }
+
+    Component.onCompleted: {
+        harnesses.clear();
+        Horse.fill_harness();
+
     }
 }
 

@@ -136,6 +136,15 @@
         <source>Leg wraps</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Horse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Patches</source>
+        <extracomment>These patches mean large coloured areas on horse skin, e.g. https://en.wikipedia.org/wiki/Pinto_horse</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LearningPage</name>

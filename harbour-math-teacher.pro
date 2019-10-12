@@ -16,6 +16,7 @@ CONFIG += sailfishapp_qml
 
 DISTFILES += qml/harbour-math-teacher.qml \
     qml/cover/CoverPage.qml \
+    qml/pages/horse.js \
     rpm/harbour-math-teacher.spec \
     rpm/harbour-math-teacher.yaml \
     translations/*.ts \

@@ -50,11 +50,11 @@
     <message>
         <source>Math teacher, version</source>
         <extracomment>The name of the app followed with a version number</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>数学教师版本</translation>
     </message>
     <message>
         <source>French (Quentin)</source>
-        <translation type="unfinished"></translation>
+        <translation>法语(Quentin)</translation>
     </message>
 </context>
 <context>
@@ -135,6 +135,15 @@
     <message>
         <source>Leg wraps</source>
         <translation>护腿</translation>
+    </message>
+    <message>
+        <source>Horse</source>
+        <translation>马儿</translation>
+    </message>
+    <message>
+        <source>Patches</source>
+        <extracomment>These patches mean large coloured areas on horse skin, e.g. https://en.wikipedia.org/wiki/Pinto_horse</extracomment>
+        <translation>马饰</translation>
     </message>
 </context>
 <context>

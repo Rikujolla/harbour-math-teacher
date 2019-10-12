@@ -2,4 +2,18 @@
    height="500"
    width="750"
 >
+  <path
+     style="fill:#ffd42a;fill-opacity:1"
+     d="M 414.71813,206.19712 439.84195,189.98521 471.28667,187.81234 504.30328,190.36674 C 512.58327,251.40358 373.18904,299.24358 404.78365,256.6556 419.23981,246.02091 438.70799,221.66925 414.71813,206.19712 Z"
+     id="01_rear_blotch"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccc"
+     inkscape:label="Rear blotch" />
+  <path
+     style="fill:#ffd42a;fill-opacity:1"
+     d="M 240.49911,234.80449 C 256.48893,226.31528 268.94276,222.07018 280.72139,227.05678 L 300.52038,246.50222 C 319.70455,249.90805 314.98293,277.63582 325.11843,305.45023 L 297.49328,301.67358 C 268.84549,295.54 256.63381,278.77129 243.53895,262.57405 Z"
+     id="01_forward_blotch"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccc"
+     inkscape:label="Forward_blotch" />
 </svg>
