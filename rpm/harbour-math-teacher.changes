@@ -11,6 +11,10 @@
 
 # * date Author's Name <author's email> version-release
 # - Summary of changes
+* Tue Oct 22 2019 Riku Lahtinen <rikul.lajolla@kiu.as> 0.0.7-1
+- Fun page text size bug fix
+- Add Swedish translation
+
 * Wed Oct 16 2019 Riku Lahtinen <rikul.lajolla@kiu.as> 0.0.6-1
 - Fun page enhancements e.g. coloring the horse and harnesses
 

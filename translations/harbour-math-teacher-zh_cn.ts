@@ -56,6 +56,10 @@
         <source>French (Quentin)</source>
         <translation>法语(Quentin)</translation>
     </message>
+    <message>
+        <source>Swedish (Åke Engelbrektson)</source>
+        <translation>瑞典语 (Åke Engelbrektson)</translation>
+    </message>
 </context>
 <context>
     <name>AddPlayer</name>

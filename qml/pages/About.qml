@@ -69,7 +69,7 @@ Page {
                     margins: Theme.paddingLarge
                 }
                 //: The name of the app followed with a version number
-                text: {qsTr("Math teacher, version") + " 0.0.6"}
+                text: {qsTr("Math teacher, version") + " 0.0.7"}
             }
 
             SectionHeader { text: qsTr("Idea") }
@@ -101,6 +101,7 @@ Page {
                 text: {
                     qsTr("Finnish (Riku Lahtinen)") + "\n"
                             + qsTr("French (Quentin)") + "\n"
+                            + qsTr("Swedish (Åke Engelbrektson)") + "\n"
                             + qsTr("Chinese (China) (Historyscholar)")
                 }
             }

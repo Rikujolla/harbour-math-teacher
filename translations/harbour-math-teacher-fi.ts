@@ -56,6 +56,10 @@
         <source>French (Quentin)</source>
         <translation>Ranskaksi (Quentin)</translation>
     </message>
+    <message>
+        <source>Swedish (Åke Engelbrektson)</source>
+        <translation>Ruotsiksi (Åke Engelbrektson)</translation>
+    </message>
 </context>
 <context>
     <name>AddPlayer</name>

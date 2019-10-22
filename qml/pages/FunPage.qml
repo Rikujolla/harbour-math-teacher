@@ -130,7 +130,7 @@ Page {
                     delegate: Rectangle {
                         id:hh_rec
                         width: grid.cellWidth
-                        height: 0.85*grid.cellHeight
+                        height: 0.8*grid.cellHeight
                         border.width: 3
                         border.color: "black"
                         Image {
@@ -175,13 +175,14 @@ Page {
 
                         Rectangle {
                             width:grid.cellWidth
-                            height:0.15*grid.cellWidth
+                            height:0.2*grid.cellWidth
                             color:"white"
                             anchors.top: hh_rec.bottom
                         }
 
                         Text {
                             text: harness_list[index].msg
+                            font.pixelSize: Theme.fontSizeExtraSmall
                             anchors.top: hh_rec.bottom
                             anchors.horizontalCenter:  hh_rec.horizontalCenter
                         }

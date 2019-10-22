@@ -46,4 +46,5 @@ CONFIG += sailfishapp_i18n
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-math-teacher-fi.ts \
                 translations/harbour-math-teacher-fr.ts \
+                translations/harbour-math-teacher-sv.ts \
                 translations/harbour-math-teacher-zh_cn.ts
