@@ -202,5 +202,10 @@
         <source>Coins</source>
         <translation>Mynt</translation>
     </message>
+    <message>
+        <source>Next fun</source>
+        <extracomment>Progress bar shows when you reach the Fun page next time</extracomment>
+        <translation>Nästa roliga</translation>
+    </message>
 </context>
 </TS>

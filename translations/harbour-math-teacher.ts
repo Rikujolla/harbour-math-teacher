@@ -202,5 +202,10 @@
         <source>Coins</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Next fun</source>
+        <extracomment>Progress bar shows when you reach the Fun page next time</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
