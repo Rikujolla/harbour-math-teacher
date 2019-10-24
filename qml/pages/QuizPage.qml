@@ -117,7 +117,8 @@ Page {
                                     time_slider.value = 0;
                                     questions_count = questions_count - 1;
                                     if (questions_count < 1) {
-                                        questions_count = Math.max(5, level *5);
+                                        questions_count = Math.round(4 + Math.log(level+1) * 5);
+                                        //console.log("Fun page", questions_count)
                                         pageStack.push(Qt.resolvedUrl("FunPage.qml"))
                                     }
                                     else if (MyFunc.level_check(level, level_points) > level) {
@@ -209,6 +210,15 @@ Page {
                 text: {
                     qsTr("Player") + ": " + player_name
                 }
+            }
+
+            ProgressBar {
+                width: parent.width
+                //: Progress bar shows when you reach the Fun page next time
+                label:qsTr("Next fun")
+                minimumValue: 0
+                maximumValue: Math.round(4 + Math.log(level+1) * 5)
+                value: maximumValue - questions_count
             }
 
             Timer {

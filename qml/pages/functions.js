@@ -162,10 +162,10 @@ function level_check(_level, _level_points) {
 
     switch (_level) {
     case 0:
-        if (_level_points > 7) {return _level + 1};
+        if (_level_points > 11) {return _level + 1};
         break;
     case 1:
-        if (_level_points > 13) {return _level + 1};
+        if (_level_points > 17) {return _level + 1};
         break;
     case 2:
         if (_level_points > 23) {return _level + 1};
@@ -189,7 +189,7 @@ function level_check(_level, _level_points) {
         if (_level_points > 79) {return _level + 1};
         break;
     case 9:
-        if (_level_points > 87) {return _level + 1};
+        if (_level_points > 89) {return _level + 1};
         break;
     default:
         return 0

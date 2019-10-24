@@ -202,5 +202,10 @@
         <source>Coins</source>
         <translation>Kolikot</translation>
     </message>
+    <message>
+        <source>Next fun</source>
+        <extracomment>Progress bar shows when you reach the Fun page next time</extracomment>
+        <translation>Seuraava huvi</translation>
+    </message>
 </context>
 </TS>

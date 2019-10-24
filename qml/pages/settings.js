@@ -33,7 +33,7 @@ function deletePlayer(_player) {
                         coins = 0;
                         level_points = 0;
                         level = 0;
-                        questions_count = 5;
+                        questions_count = 4;
                     }
                     // player_name
                     tx.executeSql('DELETE FROM Settings WHERE subname = ? OR valte = ?', [ _player, _player ])

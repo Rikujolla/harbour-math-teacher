@@ -76,6 +76,7 @@ Page {
                 if (!delete_mode) {
                     Mysets.updateActivePlayer(index)
                     Mysets.loadSettings()
+                    questions_count = Math.round(4 + Math.log(level+1) * 5);
                     pageStack.pop()
                 }
                 else {
