@@ -9,7 +9,7 @@ Name:       harbour-math-teacher
 # << macros
 
 Summary:    Math teacher application
-Version:    0.0.8
+Version:    0.0.9
 Release:    1
 Group:      Qt/Qt
 License:    LICENSE

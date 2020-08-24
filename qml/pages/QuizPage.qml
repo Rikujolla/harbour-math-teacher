@@ -110,7 +110,7 @@ Page {
                                     break_timer.start()
                                     if (time_slider.value < time_slider.maximumValue) {
                                         coins = coins + 1;
-                                        Mysets.saveCoins();
+                                        //Mysets.saveCoins();
                                         level_points = level_points + 1;
                                         Mysets.saveLevelPoints();
                                     }
@@ -227,7 +227,7 @@ Page {
                 repeat: false
                 interval: 500
                 onTriggered: {
-                    a = Math.floor(Math.random() * 11);
+                    a = Math.floor(Math.random() * (Math.max(11, level)));
                     b = MyFunc.multiplier_lottery(level)
                     MyFunc.fill_answers(a, b, c, level)
                 }

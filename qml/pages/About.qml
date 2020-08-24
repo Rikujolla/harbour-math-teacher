@@ -69,7 +69,7 @@ Page {
                     margins: Theme.paddingLarge
                 }
                 //: The name of the app followed with a version number
-                text: {qsTr("Math teacher, version") + " 0.0.8"}
+                text: {qsTr("Math teacher, version") + " 0.0.9"}
             }
 
             SectionHeader { text: qsTr("Idea") }

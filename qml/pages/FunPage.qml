@@ -38,13 +38,18 @@ Page {
         {msg:qsTr("Forelock")},
         {msg:qsTr("Mane")},
         {msg:qsTr("Tail")},
+        {msg:qsTr("Shoes")},
         {msg:qsTr("Halter")},
         {msg:qsTr("Bridle")},
+        {msg:qsTr("Saddle blanket")},
         {msg:qsTr("Saddle")},
-        {msg:qsTr("Leg wraps")}
+        {msg:qsTr("Leg wraps")},
+        //: Rosette is a prize which is attached to the horses bridle after a winned race
+        {msg:qsTr("Rosette")}
     ]
     property string blotch_color: "transparent"
     property var myColors: [ "#000000", "#ffffff", "#ffd633", "#cca300", "#cc4400", "#bf4040", "#cc6600", "#8a8a5c", "#990000", "#999900", "#808000", "#e65c00", "#997300", "#862d59", "#992600"]
+    property string folder_file : "$HOME/horse1.png" //Folder for layer images.
 
     SilicaFlickable {
         anchors.fill: parent
@@ -61,6 +66,23 @@ Page {
                         asset_path = "./assets/asset1/"
                     }
                 }
+            }
+            MenuItem {
+                text:qsTr("Share my horse")
+                onClicked:{
+                    console.log(folder_file)
+                    saddle.save("/home/nemo/horse.png")
+                    pageStack.push("Sailfish.TransferEngine.SharePage",
+
+                                   {
+                                       "source": "/home/nemo/horse.png",
+                                       "mimeType": "image/png",
+                                       "content": { "type": "text/x-uri", "status": "Sent from SailfishOS app Math teacher" },
+                                       "serviceFilter": ["sharing", "e-mail"]
+                                   }
+                                   )
+                }
+
             }
         }
 
@@ -145,6 +167,7 @@ Page {
                                 enabled: coins > index*20 ? true: false
 
                                 onClicked: {
+                                    console.log(harnesses.count)
                                     for (var i = 0; i < harnesses.count; i++) {
                                         if (harnesses.get(i).index === index && harnesses.get(i).painted === true) {
                                             harnesses.set(i,{"painted":false});
@@ -192,7 +215,7 @@ Page {
         }
     }
 
-    ListModel {
+    /*ListModel {
         id:harnesses
         ListElement {
             label:"Halter"
@@ -203,69 +226,91 @@ Page {
             painted:false
             path:""
         }
-    }
+    }*/
 
     ListModel {
         id: horse_harness
         ListElement {
-            hh_name: "Horse"
-            hh_source:"0.svg"
+            //hh_name: "Horse"
+            //hh_source:"0.svg"
             hh_source_l:"0_l.svg"
             hh_enabled:false
         }
         ListElement {
-            hh_name: "Spots"
-            hh_source:"1.svg"
+            //hh_name: "Patches"
+            //hh_source:"1.svg"
             hh_source_l:"1_l.svg"
             hh_enabled:false
         }
         ListElement {
-            hh_name: "Forelock"
-            hh_source:"2.svg"
+            //hh_name: "Forelock"
+            //hh_source:"2.svg"
             hh_source_l:"2_l.svg"
             hh_enabled:false
         }
         ListElement {
-            hh_name: "Mane"
-            hh_source:"3.svg"
+            //hh_name: "Mane"
+            //hh_source:"3.svg"
             hh_source_l:"3_l.svg"
             hh_enabled:false
         }
         ListElement {
-            hh_name: "Tail"
-            hh_source:"4.svg"
+            //hh_name: "Tail"
+            //hh_source:"4.svg"
             hh_source_l:"4_l.svg"
             hh_enabled:false
         }
         ListElement {
-            hh_name: "Halter"
-            hh_source:"5.svg"
+            //hh_name: "Shoes"
+            //hh_source:"5.svg"
+            hh_source_l:"5_ll.svg"
+            hh_enabled:false
+        }
+        ListElement {
+            //hh_name: "Halter"
+            //hh_source:"5.svg"
             hh_source_l:"5_l.svg"
             hh_enabled:false
         }
         ListElement {
-            hh_name: "Bridle"
-            hh_source:"6.svg"
+            //hh_name: "Bridle"
+            //hh_source:"6.svg"
             hh_source_l:"6_l.svg"
             hh_enabled:false
         }
         ListElement {
-            hh_name: "Saddle"
-            hh_source:"7.svg"
-            hh_source_l:"7_l.svg"
+            //hh_name: "Saddle blanket"
+            //hh_source:"8.svg"
+            hh_source_l:"8.svg"
             hh_enabled:false
         }
         ListElement {
-            hh_name: "Leg wraps"
-            hh_source:"8.svg"
+            //hh_name: "Saddle"
+            //hh_source:"9.svg"
+            hh_source_l:"9.svg"
+            hh_enabled:false
+        }
+        ListElement {
+            //hh_name: "Leg wraps"
+            //hh_source:"8.svg"
             hh_source_l:"8_l.svg"
+            hh_enabled:false
+        }
+        ListElement {
+            //hh_name: "Rosette"
+            //hh_source:"8.svg"
+            hh_source_l:"11_l.svg"
             hh_enabled:false
         }
     }
 
+
+
     Component.onCompleted: {
-        harnesses.clear();
-        Horse.fill_harness();
+        if (harnesses.count === 1){
+            harnesses.clear();
+            Horse.fill_harness();
+        }
 
     }
 }
