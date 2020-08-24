@@ -45,12 +45,12 @@
     </message>
     <message>
         <source>Chinese (China) (Historyscholar)</source>
-        <translation>汉语 (中国) (Historyscholar)</translation>
+        <translation>汉语 (中国) (Luchy Kon)</translation>
     </message>
     <message>
         <source>Math teacher, version</source>
         <extracomment>The name of the app followed with a version number</extracomment>
-        <translation>数学教师版本</translation>
+        <translation>数学老师版本</translation>
     </message>
     <message>
         <source>French (Quentin)</source>
@@ -99,14 +99,14 @@
     <name>CoverPage</name>
     <message>
         <source>Math teacher</source>
-        <translation>数学教师</translation>
+        <translation>数学老师</translation>
     </message>
 </context>
 <context>
     <name>FunPage</name>
     <message>
         <source>Fun page</source>
-        <translation>Fun页</translation>
+        <translation>趣味页</translation>
     </message>
     <message>
         <source>Change horse</source>
@@ -149,6 +149,23 @@
         <extracomment>These patches mean large coloured areas on horse skin, e.g. https://en.wikipedia.org/wiki/Pinto_horse</extracomment>
         <translation>马饰</translation>
     </message>
+    <message>
+        <source>Share my horse</source>
+        <translation>分享我的马儿</translation>
+    </message>
+    <message>
+        <source>Shoes</source>
+        <translation>马蹄铁</translation>
+    </message>
+    <message>
+        <source>Saddle blanket</source>
+        <translation>鞍毡</translation>
+    </message>
+    <message>
+        <source>Rosette</source>
+        <extracomment>Rosette is a prize which is attached to the horses bridle after a winned race</extracomment>
+        <translation>玫瑰花环</translation>
+    </message>
 </context>
 <context>
     <name>LearningPage</name>
@@ -169,7 +186,7 @@
     </message>
     <message>
         <source>Fun</source>
-        <translation>Fun </translation>
+        <translation>趣味</translation>
     </message>
     <message>
         <source>Play</source>
@@ -196,7 +213,7 @@
     </message>
     <message>
         <source>Level</source>
-        <translation>水平</translation>
+        <translation>游戏难度</translation>
     </message>
     <message>
         <source>Coins</source>
@@ -205,7 +222,7 @@
     <message>
         <source>Next fun</source>
         <extracomment>Progress bar shows when you reach the Fun page next time</extracomment>
-        <translation>再次来到 fun 页!</translation>
+        <translation>再次来到趣味页!</translation>
     </message>
 </context>
 </TS>

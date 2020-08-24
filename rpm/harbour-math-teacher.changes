@@ -11,6 +11,11 @@
 
 # * date Author's Name <author's email> version-release
 # - Summary of changes
+* Tue Sep 08 2020 Riku Lahtinen <rikul.lajolla@kiu.as> 0.0.9-1
+- Your horse can be shared e.g. by e-mail
+- Added horse harnesses to the Fun page
+- On upper levels multiplications are not so easy any more
+
 * Sat Oct 26 2019 Riku Lahtinen <rikul.lajolla@kiu.as> 0.0.8-1
 - Fun page indicator added
 - Fun page is now easier to reach

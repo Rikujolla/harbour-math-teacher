@@ -13,6 +13,7 @@ function not_enable() {
     }
 }
 
+/// multiplier_lottery() brings new numbers in order to do the multiplication
 function multiplier_lottery(_a) {
     var skipped_numbers = [];
 
@@ -81,7 +82,7 @@ function multiplier_lottery(_a) {
         lower = 0;
         break;
     default:
-        upper = 11;
+        upper = _a;
         lower = 0;
     }
 
@@ -93,13 +94,17 @@ function multiplier_lottery(_a) {
 }
 
 // This function sets right and wrong answers to the list model
-function fill_answers(a,b,c,_level) {
+function fill_answers(_a,_b,_c,_level) {
+    _a = Math.floor(Math.random() * (Math.max(11, level)));
+    a = _a
+    _b = MyFunc.multiplier_lottery(level)
+    b = _b
     var valuearray = [];
     var skipped_numbers = [];
-    c = a * b;
+    _c = _a * _b;
     var sum_visible = 1; //counts the sum of visible answers
     var right_position = Math.floor(Math.random() * 9);
-    valuearray.push(c);
+    valuearray.push(_c);
     // used numbers by levels
     switch (_level) {
     case 0:
@@ -127,11 +132,13 @@ function fill_answers(a,b,c,_level) {
         break;
     default:
         num_visible = 5;
-        upper = 11;
+        upper = _level;
         lower = 0;
     }
 
-    for (i=0;i<9;i++){ //TBD to be used while loop later to get more valid answers
+    i=0;
+    var round = 0; // To limit while loops
+    while (i<9 && round < 12){
         var _visible = Math.random();
         if (_visible < 0.6+i*0.05 && sum_visible < num_visible) {
             var __visible = true;
@@ -139,11 +146,18 @@ function fill_answers(a,b,c,_level) {
         }
         else {__visible = false};
         if (i === right_position) {
-            answers.set(i,{"box_color":"blue", "answer":c, "click": true, "box_visible":true})
+            answers.set(i,{"box_color":"blue", "answer":_c, "click": true, "box_visible":true})
         }
+        else if (answers.get(i).box_visible === true && round ===1){
+            //Do nothing
+        }
+
         else {
-            var z = Math.floor(Math.random() * (11)) * Math.floor(Math.random() * (upper + 1))
-            if (isInArray(z, valuearray)) {
+            var z = Math.floor(Math.random() * (Math.max(11,_level))) * Math.floor(Math.random() * (upper + 1))
+            if ((Math.abs(z-_c)/_c > 0.2) && (Math.abs(z-_c)>_level)) {
+                answers.set(i,{"box_color":"blue", "answer":z, "click": true, "box_visible":false})
+            }
+            else if (isInArray(z, valuearray)) {
                 answers.set(i,{"box_color":"blue", "answer":z, "click": true, "box_visible":false})
             }
             else if (__visible) {
@@ -154,6 +168,13 @@ function fill_answers(a,b,c,_level) {
             else {
                 answers.set(i,{"box_color":"blue", "answer":z, "click": true, "box_visible":false})
             }
+        }
+        if (i===8 && sum_visible < num_visible) {
+            i = 0;
+            round = round + 1;
+        }
+        else {
+            i++;
         }
     }
 }
@@ -192,6 +213,7 @@ function level_check(_level, _level_points) {
         if (_level_points > 89) {return _level + 1};
         break;
     default:
-        return 0
+        if (_level_points > _level*_level) {return _level + 1};
+        //return 0
     }
 }

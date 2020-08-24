@@ -105,26 +105,31 @@ Page {
                             onClicked: {
                                 quiz_started = true
                                 if (answers.get(index).answer === a * b){
+                                    time_slider.value = 0;
                                     answers.set(index,{"box_color":"green"})
                                     MyFunc.not_enable();
-                                    break_timer.start()
-                                    if (time_slider.value < time_slider.maximumValue) {
-                                        coins = coins + 1;
-                                        Mysets.saveCoins();
-                                        level_points = level_points + 1;
-                                        Mysets.saveLevelPoints();
-                                    }
-                                    time_slider.value = 0;
                                     questions_count = questions_count - 1;
                                     if (questions_count < 1) {
+                                        MyFunc.fill_answers(a, b, c, level)
                                         questions_count = Math.round(4 + Math.log(level+1) * 5);
                                         //console.log("Fun page", questions_count)
                                         pageStack.push(Qt.resolvedUrl("FunPage.qml"))
                                     }
                                     else if (MyFunc.level_check(level, level_points) > level) {
+                                        MyFunc.fill_answers(a, b, c, level)
                                         level = MyFunc.level_check(level, level_points);
                                         Mysets.saveLevelPoints();
                                         pageStack.push(Qt.resolvedUrl("LevelChange.qml"))
+                                    }
+                                    else if (time_slider.value < time_slider.maximumValue) {
+                                        coins = coins + 1;
+                                        //Mysets.saveCoins();
+                                        level_points = level_points + 1;
+                                        Mysets.saveLevelPoints();
+                                        break_timer.start()
+                                    }
+                                    else {
+                                        break_timer.start()
                                     }
                                 }
                                 else {
@@ -148,10 +153,14 @@ Page {
                 value: 0
                 Timer {
                     id:timer_slider
-                    running: quiz_started && mistakesModel.count < 6 && Qt.application.active
+                    running: true
+                    //running: quiz_started && mistakesModel.count < 6 && Qt.application.active
                     repeat: true
-                    interval: 100
-                    onTriggered: time_slider.value = time_slider.value + interval/1000
+                    interval: 250
+                    onTriggered: {
+                        if(developer) {console.log("test5")}
+                        time_slider.value = time_slider.value + interval/1000
+                    }
                 }
             }
             Row{
@@ -227,8 +236,9 @@ Page {
                 repeat: false
                 interval: 500
                 onTriggered: {
-                    a = Math.floor(Math.random() * 11);
-                    b = MyFunc.multiplier_lottery(level)
+                    if(developer) {console.log("test6")}
+                    //a = Math.floor(Math.random() * (Math.max(11, level)));
+                    //b = MyFunc.multiplier_lottery(level)
                     MyFunc.fill_answers(a, b, c, level)
                 }
             }
@@ -251,7 +261,43 @@ Page {
                     box_color: "blue"
                     answer: 2
                     click: true
-                    box_visible:2
+                    box_visible:true
+                }
+                ListElement {
+                    box_color: "blue"
+                    answer: 1
+                    click: true
+                    box_visible:false
+                }
+                ListElement {
+                    box_color: "blue"
+                    answer: 1
+                    click: true
+                    box_visible:false
+                }
+                ListElement {
+                    box_color: "blue"
+                    answer: 1
+                    click: true
+                    box_visible:false
+                }
+                ListElement {
+                    box_color: "blue"
+                    answer: 1
+                    click: true
+                    box_visible:false
+                }
+                ListElement {
+                    box_color: "blue"
+                    answer: 1
+                    click: true
+                    box_visible:false
+                }
+                ListElement {
+                    box_color: "blue"
+                    answer: 1
+                    click: true
+                    box_visible:false
                 }
             }
         }

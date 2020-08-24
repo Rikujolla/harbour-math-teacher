@@ -30,6 +30,19 @@ Page {
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
     property int re_sult
+    Canvas { //testing for future
+        id:bird_backround
+        visible:false
+        width: 100
+        height: 200
+        onPaint: {
+            var ctx = getContext("2d");
+            ctx.fillStyle = Qt.rgba(1, 0, 0, 1);
+            ctx.fillRect(0, 0, width, height);
+        }
+
+
+    }
 
 
     SilicaListView {

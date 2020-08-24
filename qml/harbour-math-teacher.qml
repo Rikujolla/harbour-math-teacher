@@ -35,12 +35,14 @@ ApplicationWindow
     allowedOrientations: Orientation.Portrait
     //allowedOrientations: defaultAllowedOrientations
 
+    // Common start
     property int coins: 0 // Global property for money
     property int level_points : 0 // Normally increase when you get a point when answering right
     property int level: 0 //
     property int questions_count: 4
     property string asset_path : "./assets/asset1/" //Asset number
     property string player_name: "Horse rider" // Default player name
+    property bool developer: false //Developer setting to prevent console logs in production
 
     ListModel {
         id: mistakesModel
@@ -49,6 +51,20 @@ ApplicationWindow
             second: 2
         }
     }
+    ListModel {
+        id:harnesses
+        ListElement {
+            label:"Halter"
+            index: 5
+            fill: "#502d16"
+            stroke:"#502d16"
+            width:0.1
+            painted:false
+            path:""
+        }
+    }
+    // Common end
+
     Component.onCompleted: {
         Mysets.loadSettings()
         //pageStack.push(Qt.resolvedUrl(startPageTxt))

@@ -149,6 +149,23 @@
         <extracomment>These patches mean large coloured areas on horse skin, e.g. https://en.wikipedia.org/wiki/Pinto_horse</extracomment>
         <translation>Laikut</translation>
     </message>
+    <message>
+        <source>Share my horse</source>
+        <translation>Jaa hevoskuva</translation>
+    </message>
+    <message>
+        <source>Shoes</source>
+        <translation>Kengät</translation>
+    </message>
+    <message>
+        <source>Saddle blanket</source>
+        <translation>Satulahuopa</translation>
+    </message>
+    <message>
+        <source>Rosette</source>
+        <extracomment>Rosette is a prize which is attached to the horses bridle after a winned race</extracomment>
+        <translation>Ruusuke</translation>
+    </message>
 </context>
 <context>
     <name>LearningPage</name>
