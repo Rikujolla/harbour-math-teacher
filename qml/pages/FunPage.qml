@@ -49,7 +49,6 @@ Page {
     ]
     property string blotch_color: "transparent"
     property var myColors: [ "#000000", "#ffffff", "#ffd633", "#cca300", "#cc4400", "#bf4040", "#cc6600", "#8a8a5c", "#990000", "#999900", "#808000", "#e65c00", "#997300", "#862d59", "#992600"]
-    property string folder_file : "$HOME/horse1.png" //Folder for layer images.
 
     SilicaFlickable {
         anchors.fill: parent
@@ -67,22 +66,20 @@ Page {
                     }
                 }
             }
+
             MenuItem {
                 text:qsTr("Share my horse")
                 onClicked:{
-                    console.log(folder_file)
-                    saddle.save("/home/nemo/horse.png")
+                    saddle.save(StandardPaths.home + "/horse.png")
                     pageStack.push("Sailfish.TransferEngine.SharePage",
-
                                    {
-                                       "source": "/home/nemo/horse.png",
+                                       "source": StandardPaths.home + "/horse.png",
                                        "mimeType": "image/png",
                                        "content": { "type": "text/x-uri", "status": "Sent from SailfishOS app Math teacher" },
                                        "serviceFilter": ["sharing", "e-mail"]
                                    }
                                    )
                 }
-
             }
         }
 
@@ -167,7 +164,6 @@ Page {
                                 enabled: coins > index*20 ? true: false
 
                                 onClicked: {
-                                    console.log(harnesses.count)
                                     for (var i = 0; i < harnesses.count; i++) {
                                         if (harnesses.get(i).index === index && harnesses.get(i).painted === true) {
                                             harnesses.set(i,{"painted":false});

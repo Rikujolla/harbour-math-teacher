@@ -112,7 +112,6 @@ Page {
                                     if (questions_count < 1) {
                                         MyFunc.fill_answers(a, b, c, level)
                                         questions_count = Math.round(4 + Math.log(level+1) * 5);
-                                        //console.log("Fun page", questions_count)
                                         pageStack.push(Qt.resolvedUrl("FunPage.qml"))
                                     }
                                     else if (MyFunc.level_check(level, level_points) > level) {
@@ -158,7 +157,6 @@ Page {
                     repeat: true
                     interval: 250
                     onTriggered: {
-                        if(developer) {console.log("test5")}
                         time_slider.value = time_slider.value + interval/1000
                     }
                 }
@@ -236,7 +234,6 @@ Page {
                 repeat: false
                 interval: 500
                 onTriggered: {
-                    if(developer) {console.log("test6")}
                     //a = Math.floor(Math.random() * (Math.max(11, level)));
                     //b = MyFunc.multiplier_lottery(level)
                     MyFunc.fill_answers(a, b, c, level)

@@ -136,7 +136,6 @@ function saveLevelPoints() {
     db.transaction(
                 function(tx) {
                     // Create the table, if not existing
-                    if(developer) {console.log("test0")}
                     tx.executeSql('CREATE TABLE IF NOT EXISTS Settings(name TEXT, subname TEXT, valte TEXT, valre REAL, valint INTEGER)');
                     var rs = tx.executeSql('SELECT * FROM Settings WHERE name = ? and subname = ?', ['level_points', player_name]);
                     if (rs.rows.length > 0) {
@@ -145,7 +144,6 @@ function saveLevelPoints() {
                     else {
                         tx.executeSql('INSERT INTO Settings VALUES(?, ?, ?, ?, ?)', [ 'level_points', player_name, '', '', level_points ])
                     }
-                    if(developer) {console.log("test1")}
                     var rt = tx.executeSql('SELECT * FROM Settings WHERE name = ? and subname = ?', ['level', player_name]);
                     if (rt.rows.length > 0) {
                         tx.executeSql('UPDATE Settings SET valint=? WHERE name=? AND subname =?', [level, 'level', player_name])
@@ -153,7 +151,6 @@ function saveLevelPoints() {
                     else {
                         tx.executeSql('INSERT INTO Settings VALUES(?, ?, ?, ?, ?)', [ 'level', player_name, '', '', level ])
                     }
-                    if(developer) {console.log("test2")}
 
                 }
                 )
