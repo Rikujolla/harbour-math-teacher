@@ -26,6 +26,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import QtQuick 2.2
 import Sailfish.Silica 1.0
 import "./horse.js" as Horse
+import Sailfish.Share 1.0
 //These patches mean large coloured areas on horse skin, e.g. https://en.wikipedia.org/wiki/Pinto_horse
 
 
@@ -71,14 +72,7 @@ Page {
                 text:qsTr("Share my horse")
                 onClicked:{
                     saddle.save(StandardPaths.home + "/horse.png")
-                    pageStack.push("Sailfish.TransferEngine.SharePage",
-                                   {
-                                       "source": StandardPaths.home + "/horse.png",
-                                       "mimeType": "image/png",
-                                       "content": { "type": "text/x-uri", "status": "Sent from SailfishOS app Math teacher" },
-                                       "serviceFilter": ["sharing", "e-mail"]
-                                   }
-                                   )
+                    share_picture.trigger();
                 }
             }
         }
@@ -300,7 +294,14 @@ Page {
         }
     }
 
-
+    ShareAction {
+        id:share_picture
+        mimeType:"image/png"
+        resources: [
+            StandardPaths.home + "/horse.png"
+        ]
+        title:qsTr("Share my horse")
+    }
 
     Component.onCompleted: {
         if (harnesses.count === 1){

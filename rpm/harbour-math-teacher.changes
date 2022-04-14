@@ -11,6 +11,11 @@
 
 # * date Author's Name <author's email> version-release
 # - Summary of changes
+
+* Sat Apr 09 2022 Riku Lahtinen <rikul.lajolla@kiu.as> 0.1.1-1
+- Sandboxing changes
+- Replaced obsolete TransferEngine with ShareAction
+
 * Wed Oct 07 2020 Riku Lahtinen <rikul.lajolla@kiu.as> 0.1.0-1
 - Fixed hard coded paths for Jolla Harbour
 

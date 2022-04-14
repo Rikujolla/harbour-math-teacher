@@ -12,3 +12,7 @@ Name=Math teacher
 Name[fi]=Matikan ope
 Name[fr]=Prof de maths
 Name[zh_CN]=数学教师
+
+[X-Sailjail]
+OrganizationName=fi.rikujolla
+ApplicationName=harbour-math-teacher
